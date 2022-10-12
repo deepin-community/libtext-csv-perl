@@ -1,0 +1,18 @@
+Description: adjust path in test if we run under autopkgtest
+Origin: vendor
+Forwarded: not-needed
+Author: gregor herrmann <gregoa@debian.org>
+Last-Update: 2018-08-21
+
+--- a/t/80_diag.t
++++ b/t/80_diag.t
+@@ -14,7 +14,8 @@
+     plan skip_all => "Cannot load Text::CSV" if $@;
+     require "./t/util.pl";
+ 
+-    open my $fh, "<", "lib/Text/CSV_PP.pm" or die "Cannot read error messages from PP\n";
++    my $dir = $ENV{AUTOPKGTEST_TMP} ? '/usr/share/perl5' : 'lib';
++    open my $fh, "<", "$dir/Text/CSV_PP.pm" or die "Cannot read error messages from PP\n";
+     while (<$fh>) {
+         m/^        ([0-9]{4}) => "([^"]+)"/ and $err{$1} = $2;
+ 	}
