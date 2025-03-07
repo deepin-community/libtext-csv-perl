@@ -160,7 +160,7 @@ close $fh;
 
 open $fh, "<", $tfn or die "$tfn: $!\n";
 $csv->callbacks (after_parse => sub { $_[1][0] eq 3 and return \"skip" });
-is_deeply ($csv->getline_all ($fh), [[1,"foo"],[2,"bar"],[4,"zoo"]]);
+is_deeply ($csv->getline_all ($fh), [[1,"foo"],[2,"bar"],[4,"zoo"]], "skip");
 close $fh;
 
 __END__
