@@ -11,6 +11,7 @@ t/01_is_pp.t
 t/10_base.t
 t/12_acc.t
 t/15_flags.t
+t/16_import.t
 t/20_file.t
 t/21_lexicalio.t
 t/22_scalario.t
@@ -19,14 +20,18 @@ t/40_misc.t
 t/41_null.t
 t/45_eol.t
 t/46_eol_si.t
+t/47_comment.t
 t/50_utf8.t
 t/51_utf8.t
 t/55_combi.t
 t/60_samples.t
 t/65_allow.t
 t/66_formula.t
+t/67_emptrow.t
+t/68_header.t
 t/70_rt.t
 t/71_pp.t
+t/71_strict.t
 t/75_hashref.t
 t/76_magic.t
 t/77_getall.t
@@ -37,6 +42,8 @@ t/81_subclass.t
 t/85_util.t
 t/90_csv.t
 t/91_csv_cb.t
+t/92_stream.t
+t/csv_method.t
 t/fields_containing_0.t
 t/rt99774.t
 t/util.pl
